@@ -2,7 +2,7 @@
 
 WORKING_DIR=${PWD}
 
-DOTFILES=(bash_aliases bash_profile inputrc tmux.conf vimrc)
+DOTFILES=(bash_aliases bash_profile inputrc tmux.conf vimrc gitignore_global)
 
 for i in ${DOTFILES[@]}; do
   FILE="${HOME}/.${i}"
