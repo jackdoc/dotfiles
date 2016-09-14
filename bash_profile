@@ -1,11 +1,15 @@
-# this file is source by OS X shell
-
 source ~/.bash_aliases
-source ~/.bashrc
 
-# colors in terminal
-export CLICOLOR=1
+# special options for OS X
+if [[ $(uname -a | grep Darwin) ]]; then
+  source ~/.bashrc
 
-# solarized-esque colors
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+  # colors in terminal
+  export CLICOLOR=1
 
+  # solarized-esque colors
+  export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+fi
+
+# RVM adds this
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
