@@ -7,15 +7,17 @@ DOTFILES=(bash_aliases bash_profile inputrc tmux.conf vimrc gitignore_global)
 for i in ${DOTFILES[@]}; do
   FILE="${HOME}/.${i}"
   if [ -f "${FILE}" ]; then
-    echo -n "${FILE} already exists. Overwrite it? (y/n) "
+    echo -n "${FILE} already exists. Overwrite it? (y/N) "
     read RESPONSE
     if [ "${RESPONSE}" == "y" ]; then
-      echo "Overwriting ${FILE}"
-      rm ${FILE}
-      ln -s ${WORKING_DIR}/${i} ${FILE}
+      echo "Symlinking ${FILE} to ${WORKING_DIR}/${i}"
+      ln -fs ${WORKING_DIR}/${i} ${FILE}
     else
       echo "Skipping ${FILE}"
     fi
+  else
+    echo "Symlinking ${FILE} to ${WORKING_DIR}/${i}"
+    ln -s ${WORKING_DIR}/${i} ${FILE}
   fi
   echo ""
 done
