@@ -1,5 +1,3 @@
-" John Dougherty
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -42,6 +40,9 @@ Plugin 'kien/ctrlp.vim'
 " move between vim and tmux panes seamlessly
 Plugin 'christoomey/vim-tmux-navigator'
 
+" markdown preview
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -59,8 +60,6 @@ if has('gui_running')
       set guifont=Source\ Code\ Pro\ for\ Powerline\ Semi-Bold
     endif
   endif
-  " patched font for special powerline symbols
-  let g:airline_powerline_fonts=1
 else
   set t_Co=16
 endif
@@ -84,8 +83,8 @@ let g:solarized_visibility='high'
 " pretty colors
 colorscheme solarized
 
-" show trailing whitespace with a look of disapproval
-set list listchars=trail:ಠ
+" show trailing whitespace with ~
+set list listchars=trail:~
 
 " always show status bar
 set laststatus=2
@@ -101,6 +100,10 @@ set cursorline
 
 " color column 80
 set colorcolumn=80
+
+" patched font for special powerline symbols
+" assumes patched fonts are installed on system
+let g:airline_powerline_fonts=1
 
 " more compact branch names for airline
 " truncate long branch names to fixed length
@@ -174,6 +177,15 @@ set nrformats=
 
 " interpret .md files as markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" use grip for markdown preview
+let vim_markdown_preview_github=1
+
+" use ctrl-m for markdown preview
+let vim_markdown_preview_hotkey='<C-m>'
+
+" use Google Chrome for markdown preview
+let vim_markdown_preview_browser='Google Chrome'
 
 " }}} END FUNCTIONALITY
 
