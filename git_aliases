@@ -1,0 +1,5 @@
+[alias]
+  last = log -1 HEAD
+[alias]
+  lg = log --pretty=\"%Cred%h %<(8,trunc)%Cblue%an %<(10,trunc)%Cgreen%ar %Creset%s\"
+

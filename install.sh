@@ -2,7 +2,7 @@
 
 WORKING_DIR=${PWD}
 
-DOTFILES=(bash_aliases bash_profile inputrc tmux.conf vimrc gitignore_global)
+DOTFILES=(bash_aliases bash_profile inputrc tmux.conf vimrc gitignore_global git_aliases)
 
 for i in ${DOTFILES[@]}; do
   FILE="${HOME}/.${i}"
@@ -21,4 +21,8 @@ for i in ${DOTFILES[@]}; do
   fi
   echo ""
 done
+
+set -x
+git config --global core.excludesfile "~/.gitignore_global"
+git config --global include.path ".git_aliases"
 
