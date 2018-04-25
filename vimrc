@@ -10,9 +10,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" autocomplete and syntax checking
-Plugin 'Valloric/YouCompleteMe'
-
 " git wrapper that helps with using git commands in vim
 Plugin 'tpope/vim-fugitive'
 
