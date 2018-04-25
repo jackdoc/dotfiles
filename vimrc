@@ -43,6 +43,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " markdown preview
 Plugin 'JamshedVesuna/vim-markdown-preview'
 
+" python PEP8
+Plugin 'nvie/vim-flake8'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
